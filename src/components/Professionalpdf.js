@@ -148,19 +148,8 @@ function PdfComponent() {
                 }
                 </div>
               </Stack>
-              <br></br>
-              <Stack className="p-3">
-                <h4 className="title">Project</h4>
-                <div className="d-flex flex-wrap">
-                {
-                  project.map((items, id) => {
-                    return (
-                      <p className="technology rounded" key={id}>{items}</p>
-                    )
-                  })
-                }
-                </div>
-              </Stack>
+            
+             
               <Stack className="p-3">
                 <h4 className="title">Language</h4>
                 <div className="d-flex flex-wrap">
@@ -180,14 +169,40 @@ function PdfComponent() {
           <div className="d-flex align-items-center col-md-7 p-0 py-4">
             <div>
               <div className="px-4 py-1">
-                <h4 className="title">Objective</h4>
+                <h4 className="title">About Me</h4>
                 <p className="text-break">
                     {about}
                 </p>
                 <hr></hr>
               </div>
-             
-             
+              <div className="px-4 py-1">
+                <h4 className="title">User</h4>
+                <p className="text-break">
+                    {users}
+                </p>
+                <hr></hr>
+              </div>
+
+              <div className="px-4">
+                <h4 className="title">Experience</h4>
+                {
+                  experienceList.map((item,id)=>{
+                    return(
+                      <div className="d-flex justify-content-start py-1" key={id}>
+                        <HiOfficeBuilding size={30}/>
+                        <div className="px-3">
+                          <h4>{item.title}</h4>
+                          <p className="m-0">{item.company} • {item.startMonth} {item.startYear} {`${item.isWorking ? " - Present" : " - "+item.endMonth+" "+item.endYear }`}</p>
+                          <p className="m-0">{item.location}</p>
+                          <p>{item.description}</p>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+                
+                <hr></hr>
+              </div>
 
               <div className="px-4">
                 <h4 className="title">Education</h4>
@@ -206,17 +221,8 @@ function PdfComponent() {
                   })
                 }
                 
-               <hr></hr> 
+                
               </div>
-              <div className="px-4 py-1">
-                <h4 className="title">internship</h4>
-                <p className="text-break">
-                    {users}
-                </p>
-                <hr></hr>
-              </div>
-
-              
               
             </div>
 

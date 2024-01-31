@@ -21,17 +21,19 @@ const LoginModal = () => {
       });
       
   };
-
+    
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
+     
       const response = await axios.get('http://localhost:3001/login', { email, password });
       const token = response.data.token;
+      alert(response.data.professional)
       alert('Login successful');
       setEmail('');
       setPassword('');
       Fetchusers();
-      navigate('/account');
+      navigate('/student');
       window.location.reload();
       localStorage.setItem('token', token);
     } catch (error) {
@@ -107,7 +109,7 @@ const LoginModal = () => {
               </div>
             </div>
             <a href="#">Forgot Password?</a>
-            <button type="submit" className="btn">Login</button>
+            <button type="submit" className="btn" onClick={handleLogin}>Login</button>
             <a href="/signup">NEW Here, then Sign Up!</a>
           </form1>
         </div>

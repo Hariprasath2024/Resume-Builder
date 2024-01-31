@@ -26,14 +26,15 @@ const fetchusers = () =>{
 
 const handleRegister = (event)=>{
   event.preventDefault()    
-  axios.post('http://localhost:3001/signup',{username,password,professional,email})
-  .then(()=>{
+  //alert("welcome to signup")
+  axios.post('http://localhost:3001/signup',{email, username, password,professional}).then(()=>{
+    alert("hari")
     setUsername('')
     setEmail('')
     setPassword('')
     setProfessional('')
     fetchusers()
-    navigate('/login')
+    navigate('/')
   })
 }
   // const handleInputChange = (event) => {
@@ -162,8 +163,8 @@ const handleRegister = (event)=>{
               </select>
             
             </div></div>
-          
-            <input type="submit" className="btn" value="Sign Up" />
+
+            <button type="submit" className="btn" onClick={handleRegister}>signup</button>
             <a href="/login">NEW Here, then Sign Up!</a>
           </form1>
         </div>

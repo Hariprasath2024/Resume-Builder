@@ -21,20 +21,20 @@ function Resume() {
 
         <About></About>
 
-        
+        <Experience></Experience>
 
         <Education></Education>
 
         <Skills></Skills>
         <Language></Language>
         
-        <Project></Project>
-        <User></User>
+        
+        
         
       
 
         <div className="d-grid col-2 mx-auto my-4 text-center">
-          <NavLink className="nav-link align-middle bg-dark text-white text-center ms p-2 rounded" to="/studentpdf">Preview</NavLink>
+          <NavLink className="nav-link align-middle bg-dark text-white text-center ms p-2 rounded" to="/preview">Preview</NavLink>
         </div>
 
       </Container>
